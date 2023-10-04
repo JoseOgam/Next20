@@ -1,3 +1,4 @@
+import { Footer, NavBar } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative">{children}</body>
+      <body className="relativ bg-orange-100">
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
