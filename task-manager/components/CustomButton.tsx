@@ -14,7 +14,7 @@ const CustomButton = ({
       onClick={handleClick}
       className={`${containerStyles}`}
     >
-      {title}{" "}
+      {title}
     </button>
   );
 };
