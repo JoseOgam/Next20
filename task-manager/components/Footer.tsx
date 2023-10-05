@@ -2,6 +2,7 @@
 
 import { footerLinks } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -15,19 +16,20 @@ const Footer = () => {
             width={80}
             className=" object-contain"
           />
-          <p className=" text-black">
+          <p className=" text-base text-black">
             Task Manager App <br />
             all right reserved &copy;
           </p>
         </div>
-        <div className=" flex flex-col gap-6 text-base min-w-[170px] ">
+        <div className="footer__links ">
           {footerLinks.map((item) => (
-            <div
-              key={item.title}
-              className=" flex flex-1 w-full md:justify-end flex-wrap max-md:mt-10 gap-20
-            "
-            >
+            <div key={item.title} className="footer__link">
               <h1>{item.title} </h1>
+              {item.links.map((link) => (
+                <Link key={link.title} href={link.url} className=" text-base">
+                  {link.title}{" "}
+                </Link>
+              ))}
             </div>
           ))}
         </div>
