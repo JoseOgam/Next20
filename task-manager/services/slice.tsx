@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  tasks: [{ title: "hello", body: "am here" }],
+  tasks: [],
 };
 
 export const taskSlice = createSlice({
