@@ -23,6 +23,7 @@ const Footer = () => {
         <div className=" flex flex-col gap-6 text-base min-w-[170px] ">
           {footerLinks.map((item) => (
             <div
+              key={item.title}
               className=" flex flex-1 w-full md:justify-end flex-wrap max-md:mt-10 gap-20
             "
             >

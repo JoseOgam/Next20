@@ -1,6 +1,7 @@
 import { Footer, NavBar } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Providers } from "@/services/provider";
 
 export const metadata: Metadata = {
   title: "Task Manager App",
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="relativ bg-orange-100">
         <NavBar />
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>
