@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="relativ bg-orange-100">
         <NavBar />
-        <Providers>{children}</Providers>
+        {children}
         <Footer />
       </body>
     </html>
