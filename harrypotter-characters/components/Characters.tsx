@@ -28,7 +28,7 @@ const Characters = () => {
     <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 justify-center items-center ">
       {characters.map((item: any, index: Number) => (
         <div key={item.id}>
-          <div className="flex justify-center items-center rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+          <div className="flex justify-center items-center rounded-xl shadow-md overflow-hidden md:max-w-2xl py-4">
             <Link href={`/character/${item.id}`}>
               {item.image ? (
                 <Image
