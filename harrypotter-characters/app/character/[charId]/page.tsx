@@ -1,4 +1,5 @@
 "use client";
+import { CustomBtn } from "@/components";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -25,7 +26,7 @@ const page = ({ params: { charId } }: params) => {
       throw e;
     }
   };
-  const handleClick = () => {
+  const handleRoute = () => {
     router.push("/");
   };
 
@@ -35,11 +36,9 @@ const page = ({ params: { charId } }: params) => {
 
   return (
     <div className="grid justify-center items-center pt-10">
-      <div>
-        <button onClick={handleClick}>back</button>
-      </div>
+      <div>{/* <button onClick={handleRoute}>back</button> */}</div>
       {character.map((char: any, index) => (
-        <div key={index}>
+        <div className="flex gap-10" key={index}>
           {char.image ? (
             <Image
               className="h-48 w-full object-cover md:h-full md:w-48"
@@ -53,7 +52,7 @@ const page = ({ params: { charId } }: params) => {
               No Image Found
             </div>
           )}
-          <div>
+          <div className="py-10 gap-20">
             <div>Name: {char.name}</div>
             <div>House: {char.house}</div>
             <div>
@@ -61,6 +60,11 @@ const page = ({ params: { charId } }: params) => {
             </div>
             <div>Actor: {char.actor}</div>
             <div>ancestry: {char.ancestry}</div>
+            <CustomBtn
+              title="Home Page"
+              handleClick={handleRoute}
+              btnStyle="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            />
           </div>
         </div>
       ))}
