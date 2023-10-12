@@ -35,13 +35,13 @@ const page = ({ params: { charId } }: params) => {
   }, []);
 
   return (
-    <div className="grid justify-center items-center pt-10">
+    <div className="grid justify-center items-center pt-16">
       <div>{/* <button onClick={handleRoute}>back</button> */}</div>
       {character.map((char: any, index) => (
         <div className="flex gap-10" key={index}>
           {char.image ? (
             <Image
-              className="h-48 w-full object-cover md:h-full md:w-48"
+              className="h-48 w-full object-contain  md:h-full md:w-48"
               src={char.image}
               alt="Modern building architecture"
               height={118}
