@@ -38,7 +38,10 @@ const page = ({ params: { charId } }: params) => {
     <div className="grid justify-center items-center pt-16">
       <div>{/* <button onClick={handleRoute}>back</button> */}</div>
       {character.map((char: any, index) => (
-        <div className="flex gap-10" key={index}>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center items-center "
+          key={index}
+        >
           {char.image ? (
             <Image
               className="h-48 w-full object-contain  md:h-full md:w-48"
