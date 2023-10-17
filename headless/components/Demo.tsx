@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { people } from "@/constants";
 import { Combobox } from "@headlessui/react";
 
@@ -18,8 +18,16 @@ const Demo = () => {
       <Combobox.Input onChange={(event) => setQuery(event.target.value)} />
       <Combobox.Options>
         {filteredPeople.map((person) => (
-          <Combobox.Option key={person} value={person}>
-            {person}
+          <Combobox.Option key={person} value={person} as={Fragment}>
+            {({ active }) => (
+              <li
+                className={`${
+                  active ? "bg-blue-500 text-white" : "bg-white text-black"
+                }`}
+              >
+                {person}
+              </li>
+            )}
           </Combobox.Option>
         ))}
       </Combobox.Options>
