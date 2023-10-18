@@ -1,7 +1,5 @@
 "use client";
-import React, { Fragment, useState } from "react";
-import { manufacturers } from "@/constants";
-import { Combobox } from "@headlessui/react";
+import React, { useState } from "react";
 import { SearchManufacturer } from ".";
 
 const SearcBar = () => {
