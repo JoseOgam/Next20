@@ -1,3 +1,5 @@
-import Demo from "./Demo";
+import SearchBar from "./SearchBar";
+import Hero from "./Hero";
+import CustomFilter from "./CustomFilter";
 
-export { Demo };
+export { SearchBar, Hero, CustomFilter };
