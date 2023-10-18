@@ -2,21 +2,27 @@
 import React, { Fragment, useState } from "react";
 import { manufacturers } from "@/constants";
 import { Combobox } from "@headlessui/react";
+import { SearchManufacturer } from ".";
 
 const SearcBar = () => {
-  const [selectedPerson, setSelectedPerson] = useState(manufacturers[0]);
-  const [query, setQuery] = useState("");
+  const [manufacturer, setManufacturer] = useState("");
+  // const [query, setQuery] = useState("");
   const handleSearch = () => {};
 
-  const filteredPeople =
-    query === ""
-      ? manufacturers
-      : manufacturers.filter((car) => {
-          return car.toLocaleLowerCase().includes(query.toLocaleLowerCase()); // Fix the variable name here
-        });
+  // const filteredPeople =
+  //   query === ""
+  //     ? manufacturers
+  //     : manufacturers.filter((car) => {
+  //         return car.toLocaleLowerCase().includes(query.toLocaleLowerCase()); // Fix the variable name here
+  //       });
   return (
     <form className="searchbar" onSubmit={handleSearch}>
-      <div className="searchbar__item"></div>
+      <div className="searchbar__item">
+        <SearchManufacturer
+          manufacturer={manufacturer}
+          setManufacturer={setManufacturer}
+        />
+      </div>
     </form>
     // <Combobox value={selectedPerson} onChange={setSelectedPerson}>
     //   <Combobox.Input
