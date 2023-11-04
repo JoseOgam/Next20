@@ -3,7 +3,10 @@ import React from "react";
 import { CustomBtn } from ".";
 
 const Signup = () => {
-  const handleSubmitUsers = () => {};
+  const handleSubmitUsers = (e: any) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
   return (
     <section className="flex justify-center items-center  pt-24">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -45,19 +48,19 @@ const Signup = () => {
           />
         </div>
         <div className="flex justify-center items-center md:w-full pt-3">
-          {/* <button
+          <button
+            onClick={handleSubmitUsers}
             className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none
              text-white font-bold py-2 px-4 rounded"
-            type="button"
           >
-            Sign Up
-          </button> */}
-          <CustomBtn
+            click
+          </button>
+          {/* <CustomBtn
             title="signup"
             btnStyles="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none
              text-white font-bold py-2 px-4 rounded"
             handleSubmit={handleSubmitUsers}
-          />
+          /> */}
         </div>
       </form>
     </section>

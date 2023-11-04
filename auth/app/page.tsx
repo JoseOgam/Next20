@@ -1,3 +1,4 @@
+"use client";
 import { Signup } from "@/components";
 import Image from "next/image";
 
