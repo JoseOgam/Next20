@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-
+import AddTodo from "./components/AddTodo";
+import ListTodo from "./components/ListTodo";
+import "./App.css";
 const App = () => {
   const [counter, setCounter] = useState(0);
   const add = () => {
@@ -13,11 +15,15 @@ const App = () => {
   };
   return (
     <div>
-      <div>
+      <div className="App">
         <h1>{counter} </h1>
-        <button onClick={add}>add</button>
-        <button onClick={reset}>reset</button>
-        <button onClick={subtract}>subtract</button>
+        <div className="BtnDiv">
+          <button onClick={add}>add</button>
+          <button onClick={reset}>reset</button>
+          <button onClick={subtract}>subtract</button>
+        </div>
+        <AddTodo />
+        <ListTodo />
       </div>
     </div>
   );
