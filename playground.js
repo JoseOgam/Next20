@@ -67,3 +67,8 @@
 // } else {
 //   console.log(`${a} and ${b} are equal.`);
 // }
+
+const str = "Hello world goodmorning";
+let result = str.charCodeAt(9);
+
+console.log(result);
