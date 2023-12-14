@@ -68,7 +68,14 @@
 //   console.log(`${a} and ${b} are equal.`);
 // }
 
-const str = "Hello world goodmorning";
-let result = str.charCodeAt(9);
+// const str = "Hello world goodmorning";
+// let result = str.charCodeAt(9);
 
-console.log(result);
+// console.log(result);
+
+const text = `       Java is awsome, Java is fun           `;
+
+const pattern = /Java/g;
+
+const new_text = text.replace(pattern, `JavaScript`);
+console.log(new_text.trim());
