@@ -9,7 +9,9 @@ const Signup = () => {
     username: "",
   });
 
-  const onSignup = () => {};
+  const onSignup = () => {
+    console.log("signup was successfull");
+  };
   return (
     <div className=" ">
       <div className="flex justify-center items-center pt-10">Signup</div>
@@ -65,6 +67,7 @@ const Signup = () => {
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={onSignup}
             >
               Sign Up
             </button>
@@ -76,7 +79,7 @@ const Signup = () => {
             </Link>
           </div>
         </form>
-        <div className="mb-4">
+        <div className="flex items-center justify-center pt-12">
           <Link
             href="/login"
             className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
