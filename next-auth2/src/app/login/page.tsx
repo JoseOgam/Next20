@@ -1,19 +1,48 @@
 "use client";
+import axios from "axios";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const router = useRouter();
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  const onLogin = () => {
-    console.log("Login was successfull");
+  const onLogin = async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.post("/api/users/login", user);
+
+      console.log("login success", response.data);
+      toast.success("login success");
+      router.push("/profile");
+    } catch (error: any) {
+      console.log("Login failed", error.message);
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
+  useEffect(() => {
+    if ((user.email.length > 0, user.password.length > 0)) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [user]);
   return (
     <div className=" ">
-      <div className="flex justify-center items-center pt-10">Login</div>
+      <div className="flex justify-center items-center pt-10">
+        {" "}
+        {loading ? "Proccessing... " : " Login"}{" "}
+      </div>
       <div className=" w-full">
         <form className="grid justify-center items-center ">
           <div className="mb-4">
@@ -52,7 +81,7 @@ const Login = () => {
               type="button"
               onClick={onLogin}
             >
-              LogIn
+              {buttonDisabled ? "Add Credentials" : "LogIn"}
             </button>
             <Link
               className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
