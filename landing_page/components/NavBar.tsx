@@ -6,13 +6,13 @@ const NavBar = () => {
     <header className=" w-full">
       <nav className="flex mx-auto justify-between m-5 p-5">
         <div className="">
-          <Link href="">Logo</Link>
+          <Link href="/">Logo</Link>
         </div>
         <div className="">
           <div className="flex space-x-3">
-            <Link href="">Home</Link>
-            <Link href="">Contact</Link>
-            <Link href="">About</Link>
+            <Link href="/">Home</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/about">About</Link>
           </div>
         </div>
       </nav>
