@@ -1,7 +1,24 @@
 import React from "react";
 
 const page = () => {
-  return <div> About page</div>;
+  return (
+    <div>
+      <div className="flex items-center justify-center p-3 px-10 text-center pb-8">
+        <p>
+          Next.js is an open-source web development framework created by the
+          private company Vercel providing React-based web applications with
+          server-side rendering and static website generation. React
+          documentation mentions Next.js among "Recommended Toolchains" advising
+          it to developers when "building a server-rendered website with
+          Node.js".Where traditional React apps can only render their content in
+          the client-side browser, Next.js extends this functionality to include
+          applications rendered on the server-side. The copyright and trademarks
+          for Next.js are owned by Vercel,which also maintains and leads its
+          open-source development.
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default page;
