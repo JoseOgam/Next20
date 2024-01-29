@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -6,7 +7,9 @@ const NavBar = () => {
     <header className=" w-full">
       <nav className="flex mx-auto justify-between m-5 p-5">
         <div className="">
-          <Link href="/">Logo</Link>
+          <Link href="/">
+            <Image src="/next.svg" alt="Logo" width={118} height={118} />
+          </Link>
         </div>
         <div className="">
           <div className="flex space-x-3">
