@@ -16,7 +16,9 @@ const NavBar = () => {
           />
         </Link>
 
-        <button>GitHub</button>
+        <button className=" text-2xl text-red-700 font-extrabold">
+          GitHub
+        </button>
       </nav>
     </header>
   );
