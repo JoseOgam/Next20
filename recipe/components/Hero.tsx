@@ -2,8 +2,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div>
-      <h1> Hero</h1>
+    <div className="hero">
+      <div className="flex-1 pt-36  padding-x">
+        <h1> Hero</h1>
+      </div>
     </div>
   );
 };
