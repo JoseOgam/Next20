@@ -3,6 +3,7 @@ import { fetchRecipes } from "@/services/redux/slice";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
+import Link from "next/link";
 
 const List = () => {
   const { recipes, status, error } = useSelector((state: any) => state.recipes);
@@ -12,7 +13,7 @@ const List = () => {
     dispatch(fetchRecipes() as any);
   }, []);
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <div className=" font-extrabold text-blue-700">Loading...</div>;
   }
 
   if (status === "failed") {
@@ -21,25 +22,27 @@ const List = () => {
 
   return (
     <div>
-      <div className=" pt-5">
-        <div className="flex items-center justify-center">
+      <div className=" justify-center items-center pt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-5 items-center justify-evenly">
           {recipes.map((item: any, index: Number) => (
             <div key={item.id}>
               <div>
-                {item.image ? (
-                  <Image
-                    src={item.image}
-                    alt="recipesImages"
-                    height={118}
-                    width={118}
-                    className=" object-contain"
-                  />
-                ) : (
-                  <div>NO IMAGE FOUND </div>
-                )}
-                <div>
-                  <p>{item.title}</p>
-                </div>
+                <Link href="">
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt="recipesImages"
+                      height={200}
+                      width={200}
+                      className=" rounded object-contain"
+                    />
+                  ) : (
+                    <div>NO IMAGE FOUND </div>
+                  )}
+                  <div>
+                    <p>{item.title}</p>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}

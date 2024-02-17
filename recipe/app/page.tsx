@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 
 export default function Home() {
   return (
-    <main className=" overflow-hidden">
-      <Provider store={store}>
-        <Hero />
-        <List />
-      </Provider>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 overflow-hidden">
+      <div>
+        <Provider store={store}>
+          <Hero />
+          <List />
+        </Provider>
+      </div>
     </main>
   );
 }
