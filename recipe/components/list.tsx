@@ -27,7 +27,7 @@ const List = () => {
           {recipes.map((item: any, index: Number) => (
             <div key={item.id}>
               <div>
-                <Link href="">
+                <Link href={`recipe/${item.id}`}>
                   {item.image ? (
                     <Image
                       src={item.image}
