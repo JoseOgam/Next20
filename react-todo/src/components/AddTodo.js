@@ -14,6 +14,7 @@ const AddTodo = () => {
     try {
       e.preventDefault();
       dispatch(addTodo({ task: task }));
+      setTask("");
     } catch (error) {
       console.log(error.message);
     }
