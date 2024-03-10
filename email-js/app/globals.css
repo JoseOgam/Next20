@@ -31,3 +31,47 @@ body {
     text-wrap: balance;
   }
 }
+
+.text-actives {
+  color: cadetblue;
+}
+
+.text-inactives {
+  color: antiquewhite;
+}
+
+.hero {
+  background-color: #4b4f71;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #2f363e;
+}

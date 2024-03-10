@@ -79,3 +79,6 @@ const pattern = /Java/g;
 
 const new_text = text.replace(pattern, `JavaScript`);
 console.log(new_text.trim());
+
+const str = "Hello";
+console.log(str.repeat(3));
