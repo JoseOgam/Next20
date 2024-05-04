@@ -19,16 +19,21 @@ export default function Home() {
       <div className="flex h-screen items-center justify-center font-extrabold text-8xl">
         {counter}
       </div>
-      {/* <button onClick={handleAddCounter}>Add</button>
-      <button onClick={handleResetCounter}>reset</button>
-      <button onClick={handleSubtractCounter}>subtract</button> */}
-      <div className="flex items-center justify-between pt-5 pb-10 ">
-        <CustomBtn title="Add" handleClick={handleAddCounter} btnStyle="" />
-        <CustomBtn title="Reset" handleClick={handleResetCounter} btnStyle="" />
+      <div className="flex flex-col md:flex-row md:items-center gap-4 items-center justify-between pt-5 pb-10 px-10 ">
+        <CustomBtn
+          title="Add"
+          handleClick={handleAddCounter}
+          btnStyle="addBtn"
+        />
+        <CustomBtn
+          title="Reset"
+          handleClick={handleResetCounter}
+          btnStyle="resetBtn"
+        />
         <CustomBtn
           title="Subtract"
           handleClick={handleSubtractCounter}
-          btnStyle=""
+          btnStyle="subtractBtn"
         />
       </div>
     </main>
