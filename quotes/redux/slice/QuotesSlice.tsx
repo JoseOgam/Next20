@@ -1,14 +1,17 @@
-import { AppState } from "@/types";
+import { AppState, QuoteData } from "@/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { error } from "console";
-const fetchRandomQuotes = createAsyncThunk("quote/fetchQuotes", async () => {
-  const response = await fetch("https://api.quotable.io/random");
-  const data = await response.json();
-  return data;
-});
+
+export const fetchRandomQuotes = createAsyncThunk(
+  "quote/fetchQuotes",
+  async () => {
+    const response = await fetch("https://api.quotable.io/random");
+    const data = await response.json();
+    return data;
+  }
+);
 
 const initialState: AppState = {
-  quote: null,
+  quote: [],
   status: "idle",
   error: null,
 };
